@@ -1,1 +1,5 @@
-<app-child [childProperty]="parentField"></app-child>
+<app-child [childProperty]="'This is literal value'"></app-child>
+<hr />
+<app-child
+  childProperty="This is literal value doesn't need inner quotes"
+></app-child>
