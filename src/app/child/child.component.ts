@@ -6,9 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
-  @Input() childProperty;
+  childLocalField;
 
-  constructor() {}
+  @Input() set childProperty(value) {
+    console.log('Parent sends the property data', value);
+    this.childLocalField = value;
+  }
 
-  ngOnInit() {}
+  constructor() {
+    console.log('Constructor called');
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit called');
+  }
 }
